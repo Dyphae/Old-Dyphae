@@ -1,5 +1,6 @@
 package com.github.MASTRIO.JADF.testPack;
 
+import com.github.MASTRIO.JADF.Build;
 import com.github.MASTRIO.JADF.Commands;
 import com.github.MASTRIO.JADF.Datapack;
 
@@ -8,6 +9,7 @@ public class TestDatapack {
   // Variables
   static Datapack datapack = new Datapack();
   static Commands commands = new Commands();
+  static Build build = new Build();
 
 
   // Main method
@@ -15,27 +17,16 @@ public class TestDatapack {
 
     // Create new datapack
     datapack.newDatapack(
-      "Test Datapack",
-      "A datapack for testing",
-      "me",
+      "sus datapack",
+      "sus_datapack",
+      "A datapack for being sus",
+      "bob ross",
       "v1.0.0"
     );
 
     // Build the base datapack
-    datapack.build();
-
-    // Create Functions
-    //functions();
+    build.datapack();
 
   }
-
-  //static void functions() {
-  //
-  //  commands.function = new String[] {
-  //    commands.say("sus"),
-  //    commands.say("suspicious")
-  //  }; datapack.createFunction("test");
-  //
-  //}
 
 }
