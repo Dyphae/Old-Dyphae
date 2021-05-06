@@ -12,11 +12,11 @@ public class Datapack {
   }
 
   // New datapack method
-  public void newDatapack(String name, String dataName, String description, String author, String version) {
+  public void newDatapack(String name, String namespace, String description, String author, String version) {
 
     datapackData = new String[]{
       name,
-      dataName,
+      namespace,
       description,
       author,
       version

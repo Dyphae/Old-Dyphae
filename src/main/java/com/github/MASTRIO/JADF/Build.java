@@ -9,7 +9,19 @@ import java.nio.file.Paths;
 
 public class Build {
 
-  public void datapack() {
+  // Variables
+  public String[] functionCommands = {
+    "say Test"
+  };
+  public Build build;
+  String currentDir = System.getProperty("user.dir");
+  Path path;
+  String packPath;
+  File newFile;
+  FileWriter fillFile;
+  String compileBar = "~----------------------------------------------------------------------------------------~";
+
+  public void baseFiles() {
 
     // Variables
     Datapack dp = new Datapack();
@@ -26,17 +38,10 @@ public class Build {
     // Is Building
     System.out.println("\nBuilding '" + Datapack.datapackData[0] + "' datapack version '" + Datapack.datapackData[3] + "', made by '" + Datapack.datapackData[2] + "'");
 
-    // Variables
-    String currentDir = System.getProperty("user.dir");
-    Path path;
-    String packPath;
-    File newFile;
-    FileWriter fillFile;
-
     // Create Output folder
     try {
 
-      System.out.println("------------------------------------");
+      System.out.println(compileBar);
 
       // Create base folder
       packPath = currentDir + "/" + Datapack.datapackData[0] + "/";
@@ -122,17 +127,56 @@ public class Build {
       fillFile.close();
       System.out.println("Generated tick.mcfunction file");
 
-      System.out.println("------------------------------------");
-
-      // Completed
-      System.out.println("The built datapack is located at: " + currentDir + "/" + Datapack.datapackData[0] + "/");
+      // Create load.mcfunction files
+      newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/load.mcfunction");
+      fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/load.mcfunction");
+      fillFile.write("say LOAD\n");
+      fillFile.close();
+      System.out.println("Generated load.mcfunction file");
 
     } catch (IOException e) {
 
       System.err.println("Failed to build datapack!");
+      System.exit(69);
 
     }
 
   }
+
+  public void completeBuild() {
+
+    System.out.println(compileBar);
+    System.out.println("Datapack Build Completed");
+    System.out.println("The built datapack is located at: " + currentDir + "/" + Datapack.datapackData[0] + "/");
+
+  }
+
+  public void createFunction(String functionNameThing) {
+
+    try {
+
+      newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionNameThing + ".mcfunction");
+      fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionNameThing + ".mcfunction");
+
+      int fc = 0;
+      for (byte i = (byte) (functionCommands.length - 1); i >= 0; i--) {
+
+        fillFile.write(functionCommands[fc] + "\n");
+        fc++;
+
+      }
+
+      fillFile.close();
+      System.out.println("Generated " + functionNameThing + ".mcfunction file");
+
+    } catch (IOException e) {
+
+      System.err.println("Failed to create function");
+
+    }
+
+  }
+
+  //fillFile.write("\n");
 
 }
