@@ -11,20 +11,18 @@ public class Build {
 
   // Variables
   public String[] functionCommands = {
-    "say Test"
+    "say TEST"
   };
-  public Build build;
   String currentDir = System.getProperty("user.dir");
   Path path;
   String packPath;
   File newFile;
   FileWriter fillFile;
   String compileBar = "~----------------------------------------------------------------------------------------~";
+  public String functionN;
+  static Datapack datapack = new Datapack();
 
   public void baseFiles() {
-
-    // Variables
-    Datapack dp = new Datapack();
 
     // Epic ASCII logo/icon
     System.out.println("    ___  ________  ________  ________ ");
@@ -123,14 +121,30 @@ public class Build {
       // Create tick.mcfunction file
       newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/tick.mcfunction");
       fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/tick.mcfunction");
-      fillFile.write("say TICK\n");
+
+      int tf = 0;
+      for (byte i = (byte) (datapack.tickFunction.length - 1); i >= 0; i--) {
+
+        fillFile.write(datapack.tickFunction[tf] + "\n");
+        tf++;
+
+      }
+
       fillFile.close();
       System.out.println("Generated tick.mcfunction file");
 
       // Create load.mcfunction files
       newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/load.mcfunction");
       fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/load.mcfunction");
-      fillFile.write("say LOAD\n");
+
+      int lf = 0;
+      for (byte i = (byte) (datapack.loadFunction.length - 1); i >= 0; i--) {
+
+        fillFile.write(datapack.loadFunction[lf] + "\n");
+        lf++;
+
+      }
+
       fillFile.close();
       System.out.println("Generated load.mcfunction file");
 
@@ -153,10 +167,12 @@ public class Build {
 
   public void createFunction(String functionNameThing) {
 
+    functionN = functionNameThing;
+
     try {
 
-      newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionNameThing + ".mcfunction");
-      fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionNameThing + ".mcfunction");
+      newFile = new File(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionN + ".mcfunction");
+      fillFile = new FileWriter(packPath + "/data/" + Datapack.datapackData[1] + "/functions/" + functionN + ".mcfunction");
 
       int fc = 0;
       for (byte i = (byte) (functionCommands.length - 1); i >= 0; i--) {
@@ -167,7 +183,7 @@ public class Build {
       }
 
       fillFile.close();
-      System.out.println("Generated " + functionNameThing + ".mcfunction file");
+      System.out.println("Generated " + functionN + ".mcfunction file");
 
     } catch (IOException e) {
 
@@ -176,7 +192,5 @@ public class Build {
     }
 
   }
-
-  //fillFile.write("\n");
 
 }

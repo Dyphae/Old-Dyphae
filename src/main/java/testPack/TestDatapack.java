@@ -1,4 +1,4 @@
-package com.github.MASTRIO.JADF.testPack;
+package testPack;
 
 import com.github.MASTRIO.JADF.Build;
 import com.github.MASTRIO.JADF.Commands;
@@ -7,7 +7,6 @@ import com.github.MASTRIO.JADF.Datapack;
 public class TestDatapack {
 
   // Variables
-  static Datapack datapack = new Datapack();
   static Commands commands = new Commands();
   static Build build = new Build();
 
@@ -15,20 +14,33 @@ public class TestDatapack {
   public static void main(String[] args) {
 
     // Create new datapack
-    datapack.newDatapack(
+    Datapack.newDatapack(
       "Kinda Sus Datapack ngl",
-      "sus",
+      "hurr",
       "That's kinda sus",
-      "I am bob ross",
-      "v1.0.0"
+      "Bob Ross",
+      "version 'sus'"
     );
+
+    // Load and Tick
+    Datapack.loadFunction = new String[] {
+      commands.say("loading pog"),
+      commands.function("this", "coolFunction"),
+      commands.gamerule("showDeathMessages", false)
+    };
+    Datapack.tickFunction = new String[]{
+      commands.give("@a", "dirt", 1, null)
+    };
+
 
     // Build the datapack
     build.baseFiles();
-    // Build Functions
+    /* --- |Functions| --- */
     coolFunction();
     someOtherFunction();
     sus();
+    call();
+    /* ------------------- */
     build.completeBuild();
 
   }
@@ -40,10 +52,9 @@ public class TestDatapack {
       commands.say("sus"),
       commands.say("egg"),
       commands.say("oh wow it's you!!!"),
-      commands.give("@a", "oak_planks", 69, null)
-    };
-
-    build.createFunction("coolFunction");
+      commands.give("@a", "oak_planks", 69, null),
+      commands.tellraw("@r", "{\"text\":\"test tellraw message\"}")
+    }; build.createFunction("coolFunction");
 
   }
 
@@ -54,10 +65,9 @@ public class TestDatapack {
       commands.say("hurr"),
       commands.say("test 3????"),
       commands.say("MORE TESTING WOO"),
-      commands.help()
-    };
-
-    build.createFunction("hey_look_a_cool_function");
+      commands.help(),
+      commands.title(null, "apple", null)
+    }; build.createFunction("hey_look_a_cool_function");
 
   }
 
@@ -66,10 +76,18 @@ public class TestDatapack {
     build.functionCommands = new String[] {
       commands.say("That's kinda sus ngl"),
       commands.give("@r", "chorus_fruit", 1, "Count:69"),
-      commands.clear("@r", "netherite_ingot", 34)
-    };
+      commands.clear("@r", "netherite_ingot", 34),
+      commands.title("@a", "title", "bro that's kinda sus")
+    }; build.createFunction("sus");
 
-    build.createFunction("sus");
+  }
+
+  static void call() {
+
+    build.functionCommands = new String[] {
+      commands.say("emergency meeting"),
+      commands.function("this", "sus")
+    }; build.createFunction("call");
 
   }
 

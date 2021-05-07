@@ -4,22 +4,22 @@ public class Datapack {
 
   // Variables
   static String[] datapackData;
-
-  // TODO: Make this
-  // Make new function
-  public void createFunction(String functionName) {
-    System.out.println("New Function: " + functionName);
-  }
+  public static String[] loadFunction = {
+    "say LOAD"
+  };
+  public static String[] tickFunction = {
+    "say TICK"
+  };
 
   // New datapack method
-  public void newDatapack(String name, String namespace, String description, String author, String version) {
+  public static void newDatapack(String name, String namespace, String description, String author, String version) {
 
     datapackData = new String[]{
-      name,
-      namespace,
-      description,
-      author,
-      version
+      name, // 0
+      namespace, // 1
+      description, // 2
+      author, // 3
+      version // 4
     };
 
   }
