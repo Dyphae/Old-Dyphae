@@ -94,10 +94,16 @@ public class Commands {
   // Command: /title
   public String title(String selector, String titleType, String message) {
 
-    if (titleType != "title" || titleType != "subtitle" || titleType != "actionbar") {
+    if (!(titleType != "title" || titleType != "subtitle" || titleType != "actionbar" || titleType != "clear" || titleType != "reset")) {
 
       System.err.println("Title command has an incorrect titleType (" + titleType + "), defaulting to 'title'");
       titleType = "title";
+
+    }
+
+    if (titleType == "clear" || titleType == "reset") {
+
+      return "title " + selector + " " + titleType;
 
     }
 
@@ -207,5 +213,54 @@ public class Commands {
     return "gamerule " + gamerule + " " + set;
 
   }
+
+  // TODO: Advancement
+
+  // TODO: Attribute
+
+  // TODO: Bossbar
+
+  // TODO: Clone
+
+  // TODO: Data
+
+  // TODO: Datapack
+
+  // Command: /seed
+  public String seed() {
+
+    return "seed";
+
+  }
+
+  // Command: /reload
+  public String reload() {
+
+    return "reload";
+
+  }
+
+  // TODO: Tag
+
+  // TODO: Experience
+
+  // TODO: Forceload
+
+  // Command: /gamemode
+  public String gamemode (String gamemode, String selector) {
+
+    if (selector == null) {
+
+      return "gamemode " + gamemode;
+
+    } else {
+
+      return "gamemode " + gamemode + " " + selector;
+
+    }
+
+  }
+
+  // TODO: Worldborder
 
 }

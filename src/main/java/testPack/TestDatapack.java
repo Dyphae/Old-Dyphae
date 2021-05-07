@@ -26,7 +26,8 @@ public class TestDatapack {
     Datapack.loadFunction = new String[] {
       commands.say("loading pog"),
       commands.function("this", "coolFunction"),
-      commands.gamerule("showDeathMessages", false)
+      commands.gamerule("showDeathMessages", false),
+      commands.title("@a", "clear", null)
     };
     Datapack.tickFunction = new String[]{
       commands.give("@a", "dirt", 1, null)
