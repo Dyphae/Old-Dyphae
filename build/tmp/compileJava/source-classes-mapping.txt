@@ -1,0 +1,8 @@
+com/github/MASTRIO/JADF/Datapack.java
+ com.github.MASTRIO.JADF.Datapack
+com/github/MASTRIO/JADF/Build.java
+ com.github.MASTRIO.JADF.Build
+testPack/TestDatapack.java
+ testPack.TestDatapack
+com/github/MASTRIO/JADF/Commands.java
+ com.github.MASTRIO.JADF.Commands
