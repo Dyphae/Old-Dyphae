@@ -4,6 +4,8 @@ import com.github.MASTRIO.JADF.Build;
 import com.github.MASTRIO.JADF.Commands;
 import com.github.MASTRIO.JADF.Datapack;
 
+import java.io.IOException;
+
 public class TestDatapack {
 
   // Variables
@@ -11,7 +13,7 @@ public class TestDatapack {
   static Build build = new Build();
 
   // Main method
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
 
     // Create new datapack
     Datapack.newDatapack(
@@ -19,15 +21,20 @@ public class TestDatapack {
       "hurr",
       "That's kinda sus",
       "Bob Ross",
+      "bob_ross",
       "version 'sus'"
+    );
+    Datapack.config(
+      true
     );
 
     // Load and Tick
     Datapack.loadFunction = new String[] {
       commands.say("loading pog"),
-      commands.function("this", "coolFunction"),
+      commands.function("this", "cool_function"),
+      Datapack.comment("sussy comment imposter"),
       commands.gamerule("showDeathMessages", false),
-      commands.title("@a", "clear", null)
+      commands.function("this", "gogy/dream")
     };
     Datapack.tickFunction = new String[]{
       commands.give("@a", "dirt", 1, null)
@@ -36,12 +43,15 @@ public class TestDatapack {
 
     // Build the datapack
     build.baseFiles();
-    /* --- |Functions| --- */
+    /* --- |Sub-Folders| --- */
+    Datapack.makeSubFolder("gogy");
+    /* ---- |Functions| ---- */
     coolFunction();
     someOtherFunction();
     sus();
     call();
-    /* ------------------- */
+    dream();
+    /* --------------------- */
     build.completeBuild();
 
   }
@@ -55,7 +65,7 @@ public class TestDatapack {
       commands.say("oh wow it's you!!!"),
       commands.give("@a", "oak_planks", 69, null),
       commands.tellraw("@r", "{\"text\":\"test tellraw message\"}")
-    }; build.createFunction("coolFunction");
+    }; build.createFunction("cool_function");
 
   }
 
@@ -66,9 +76,8 @@ public class TestDatapack {
       commands.say("hurr"),
       commands.say("test 3????"),
       commands.say("MORE TESTING WOO"),
-      commands.help(),
       commands.title(null, "apple", null)
-    }; build.createFunction("hey_look_a_cool_function");
+    }; build.createFunction("hey_look");
 
   }
 
@@ -76,8 +85,7 @@ public class TestDatapack {
 
     build.functionCommands = new String[] {
       commands.say("That's kinda sus ngl"),
-      commands.give("@r", "chorus_fruit", 1, "Count:69"),
-      commands.clear("@r", "netherite_ingot", 34),
+      commands.give("@a", "chorus_fruit", 1, "Count:69"),
       commands.title("@a", "title", "bro that's kinda sus")
     }; build.createFunction("sus");
 
@@ -89,6 +97,15 @@ public class TestDatapack {
       commands.say("emergency meeting"),
       commands.function("this", "sus")
     }; build.createFunction("call");
+
+  }
+
+  static void dream() {
+
+    build.functionCommands = new String[] {
+      Datapack.comment("dodododo"),
+      commands.title("@a", "title", "SPEEDRUN GOGOGOGO")
+    }; build.createFunction("gogy/dream");
 
   }
 

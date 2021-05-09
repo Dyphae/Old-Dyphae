@@ -15,7 +15,7 @@ public class Build {
   };
   String currentDir = System.getProperty("user.dir");
   Path path;
-  String packPath;
+  public String packPath;
   File newFile;
   FileWriter fillFile;
   String compileBar = "~----------------------------------------------------------------------------------------~";
@@ -40,9 +40,9 @@ public class Build {
     try {
 
       System.out.println(compileBar);
+      packPath = currentDir + "/" + Datapack.datapackData[0] + "/";
 
       // Create base folder
-      packPath = currentDir + "/" + Datapack.datapackData[0] + "/";
       path = Paths.get(packPath);
       Files.createDirectories(path);
       System.out.println("Generated base folder");
@@ -58,11 +58,90 @@ public class Build {
       fillFile.write("{\n");
       fillFile.write("  \"pack\": {\n");
       fillFile.write("    \"pack_format\": 6,\n");
-      fillFile.write("    \"description\": [{\"text\":\"" + Datapack.datapackData[2] + "\"},{\"text\":\"\\n\"},{\"text\":\"" + Datapack.datapackData[4] + " by " + Datapack.datapackData[3] + "\"}]\n");
+      fillFile.write("    \"description\": [{\"text\":\"" + Datapack.datapackData[2] + "\"},{\"text\":\"\\n\"},{\"text\":\"" + Datapack.datapackData[5] + " by " + Datapack.datapackData[3] + "\"}]\n");
       fillFile.write("  }\n");
       fillFile.write("}\n");
       fillFile.close();
       System.out.println("Generated pack.mcmeta file");
+
+      /* ---- Conventions ---- */
+      if (Datapack.configuration[0]) {
+
+        // Create global folder
+        path = Paths.get(packPath + "/data/global");
+        Files.createDirectories(path);
+        System.out.println("Generated global folder");
+
+        // Create advancements folder
+        path = Paths.get(packPath + "/data/global/advancements");
+        Files.createDirectories(path);
+        System.out.println("Generated global/advanements folder");
+
+        // Create root.json file
+        newFile = new File(packPath + "/data/global/advancements/root.json");
+        fillFile = new FileWriter(packPath + "/data/global/advancements/root.json");
+        fillFile.write("{\n");
+        fillFile.write("  \"display\": {\n");
+        fillFile.write("    \"title\": \"Installed Datapacks\",\n");
+        fillFile.write("    \"description\": \"\",\n");
+        fillFile.write("    \"icon\": {\n");
+        fillFile.write("      \"item\": \"minecraft:knowledge_book\"},\n");
+        fillFile.write("    \"background\": \"minecraft:textures/block/black_concrete_powder.png\",\n");
+        fillFile.write("    \"show_toast\": false,\n");
+        fillFile.write("    \"announce_to_chat\": false\n");
+        fillFile.write("  },\n");
+        fillFile.write("  \"criteria\": {\n");
+        fillFile.write("    \"trigger\": {\n");
+        fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
+        fillFile.write("  }\n");
+        fillFile.write("}\n");
+        fillFile.close();
+        System.out.println("Generated root.json file");
+
+        // Create author file
+        newFile = new File(packPath + "/data/global/advancements/" + Datapack.datapackData[4] + ".json");
+        fillFile = new FileWriter(packPath + "/data/global/advancements/" + Datapack.datapackData[4] + ".json");
+        fillFile.write("{\n");
+        fillFile.write("  \"display\": {\n");
+        fillFile.write("    \"title\": \"" + Datapack.datapackData[3] + "\",\n");
+        fillFile.write("    \"description\": \"" + Datapack.datapackData[3] + " makes cool datapacks using the JADF framework ;)\",\n");
+        fillFile.write("    \"icon\": {\n");
+        fillFile.write("      \"item\": \"minecraft:player_head\",\n");
+        fillFile.write("      \"nbt\": \"{SkullOwner:{Name: \\\"" + Datapack.datapackData[3] + "\\\", Properties: {textures: [{Value: \\\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODNkNTRjMGE1ZTg1MzIxNzdmOTM3MDZiNjQxMDc0MGQ5Yzk2NDA1NzNlMTVmODEyODYwYzcwMDJjODU5NTE4MSJ9fX0=\\\"}]}}}\"\n");
+        fillFile.write("    },\n");
+        fillFile.write("    \"background\": \"minecraft:textures/block/black_concrete_powder.png\",\n");
+        fillFile.write("    \"show_toast\": false,\n");
+        fillFile.write("    \"announce_to_chat\": false\n");
+        fillFile.write("  },\n");
+        fillFile.write("  \"criteria\": {\n");
+        fillFile.write("    \"trigger\": {\n");
+        fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
+        fillFile.write("  }\n}\n");
+        fillFile.close();
+        System.out.println("Generated " + Datapack.datapackData[4] + ".json file");
+
+        // Create datapack file
+        newFile = new File(packPath + "/data/global/advancements/" + Datapack.datapackData[1] + ".json");
+        fillFile = new FileWriter(packPath + "/data/global/advancements/" + Datapack.datapackData[1] + ".json");
+        fillFile.write("{\n");
+        fillFile.write("  \"display\": {\n");
+        fillFile.write("    \"title\": \"" + Datapack.datapackData[0] + " Version" + Datapack.datapackData[5] + "\",\n");
+        fillFile.write("    \"description\": \"" + Datapack.datapackData[2] + "\",\n");
+        fillFile.write("    \"icon\": {\n");
+        fillFile.write("      \"item\": \"minecraft:command_block\"\n");
+        fillFile.write("    },\n");
+        fillFile.write("    \"background\": \"minecraft:textures/block/black_concrete_powder.png\",\n");
+        fillFile.write("    \"show_toast\": false,\n");
+        fillFile.write("    \"announce_to_chat\": false\n");
+        fillFile.write("  },\n");
+        fillFile.write("  \"criteria\": {\n");
+        fillFile.write("    \"trigger\": {\n");
+        fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
+        fillFile.write("  }\n}\n");
+        fillFile.close();
+        System.out.println("Generated " + Datapack.datapackData[0] + ".json file");
+
+      }
 
       // Create minecraft folder
       path = Paths.get(packPath + "/data/minecraft");

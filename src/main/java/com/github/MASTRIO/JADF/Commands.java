@@ -13,13 +13,6 @@ public class Commands {
 
   }
 
-  // Command: /help
-  public String help() {
-
-    return "help";
-
-  }
-
   // Command: /give
   public String give(String selector, String item, int amount, String nbt) {
 
@@ -29,7 +22,7 @@ public class Commands {
 
     } else {
 
-      return "give " + selector + " " + "minecraft:" + item + " " + amount + " {" + nbt + "}";
+      return "give " + selector + " " + "minecraft:" + item + "{" + nbt + "} " + amount;
 
     }
 
