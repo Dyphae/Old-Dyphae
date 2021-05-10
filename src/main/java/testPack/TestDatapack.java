@@ -37,7 +37,8 @@ public class TestDatapack {
       commands.function("this", "gogy/dream")
     };
     Datapack.tickFunction = new String[]{
-      commands.give("@a", "dirt", 1, null)
+      commands.give("@a", "dirt", 1, null),
+      commands.title("@e", "actionbar", null)
     };
 
 
@@ -51,6 +52,7 @@ public class TestDatapack {
     sus();
     call();
     dream();
+    taggy();
     /* --------------------- */
     build.completeBuild();
 
@@ -104,8 +106,18 @@ public class TestDatapack {
 
     build.functionCommands = new String[] {
       Datapack.comment("dodododo"),
-      commands.title("@a", "title", "SPEEDRUN GOGOGOGO")
+      commands.title("@a", "title", "SPEEDRUN GOGOGOGO"),
+      commands.title("@e", "actionbar", null)
     }; build.createFunction("gogy/dream");
+
+  }
+
+  static void taggy() {
+
+    build.functionCommands = new String[] {
+      Datapack.comment("get tagged lol"),
+      commands.tag(null, "add", "imposter_role")
+    }; build.createFunction("gogy/taggy");
 
   }
 

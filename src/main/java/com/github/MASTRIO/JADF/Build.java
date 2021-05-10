@@ -64,7 +64,7 @@ public class Build {
       fillFile.close();
       System.out.println("Generated pack.mcmeta file");
 
-      /* ---- Conventions ---- */
+      // Conventions
       if (Datapack.configuration[0]) {
 
         // Create global folder
@@ -95,6 +95,7 @@ public class Build {
         fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
         fillFile.write("  }\n");
         fillFile.write("}\n");
+        fillFile.write("}");
         fillFile.close();
         System.out.println("Generated root.json file");
 
@@ -117,6 +118,7 @@ public class Build {
         fillFile.write("    \"trigger\": {\n");
         fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
         fillFile.write("  }\n}\n");
+        fillFile.write("}");
         fillFile.close();
         System.out.println("Generated " + Datapack.datapackData[4] + ".json file");
 
@@ -125,7 +127,7 @@ public class Build {
         fillFile = new FileWriter(packPath + "/data/global/advancements/" + Datapack.datapackData[1] + ".json");
         fillFile.write("{\n");
         fillFile.write("  \"display\": {\n");
-        fillFile.write("    \"title\": \"" + Datapack.datapackData[0] + " Version" + Datapack.datapackData[5] + "\",\n");
+        fillFile.write("    \"title\": \"" + Datapack.datapackData[0] + " | " + Datapack.datapackData[5] + "\",\n");
         fillFile.write("    \"description\": \"" + Datapack.datapackData[2] + "\",\n");
         fillFile.write("    \"icon\": {\n");
         fillFile.write("      \"item\": \"minecraft:command_block\"\n");
@@ -138,6 +140,7 @@ public class Build {
         fillFile.write("    \"trigger\": {\n");
         fillFile.write("      \"trigger\": \"minecraft:tick\"\n");
         fillFile.write("  }\n}\n");
+        fillFile.write("}");
         fillFile.close();
         System.out.println("Generated " + Datapack.datapackData[0] + ".json file");
 
