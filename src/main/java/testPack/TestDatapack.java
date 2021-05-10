@@ -53,6 +53,7 @@ public class TestDatapack {
     call();
     dream();
     taggy();
+    score();
     /* --------------------- */
     build.completeBuild();
 
@@ -118,6 +119,15 @@ public class TestDatapack {
       Datapack.comment("get tagged lol"),
       commands.tag(null, "add", "imposter_role")
     }; build.createFunction("gogy/taggy");
+
+  }
+
+  static void score() {
+
+    build.functionCommands = new String[] {
+      Datapack.comment("mak cool scoreboard thing"),
+      commands.scoreboardObjectives("add", "sus_level", "level", null)
+    }; build.createFunction("score");
 
   }
 

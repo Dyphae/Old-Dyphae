@@ -2,12 +2,16 @@ package com.github.MASTRIO.JADF;
 
 public class Commands {
 
-  // Variables
-  static Datapack datapack = new Datapack();
-
   // * Commands
   // Command: /say
   public String say(String message) {
+
+    if (message == null) {
+
+      System.out.println(ConsoleColours.WARN + "Missing message, defaulting to 'generic message'" + ConsoleColours.RESET);
+      message = "generic message";
+
+    }
 
     return "say " + message;
 
@@ -87,14 +91,14 @@ public class Commands {
   // Command: /title
   public String title(String selector, String titleType, String message) {
 
-    if (!(titleType == "title" || titleType == "subtitle" || titleType == "actionbar" || titleType == "clear" || titleType == "reset")) {
+    if (!(titleType.equals("title") || titleType.equals("subtitle") || titleType.equals("actionbar") || titleType.equals("clear") || titleType.equals("reset"))) {
 
       System.out.println(ConsoleColours.WARN + "Title command has an incorrect titleType (" + titleType + "), defaulting to 'title'" + ConsoleColours.RESET);
       titleType = "title";
 
     }
 
-    if (titleType == "clear" || titleType == "reset") {
+    if (titleType.equals("clear") || titleType.equals("reset")) {
 
       return "title " + selector + " " + titleType;
 
@@ -148,7 +152,7 @@ public class Commands {
   // Command: /function
   public String function(String namespace, String function) {
 
-    if (namespace == "this") {
+    if (namespace.equals("this")) {
 
       namespace = Datapack.datapackData[1];
 
@@ -161,7 +165,7 @@ public class Commands {
   // Command: /gamerule
   public String gamerule(String gamerule, Boolean set) {
 
-    if (!(gamerule != "announceAdvancements" || gamerule != "commandBlockOutput" || gamerule != "disableElytraMovementCheck" || gamerule != "disableRaids" || gamerule != "doDaylightCycle" || gamerule != "doEntityDrops" || gamerule != "doFireTick" || gamerule != "doImmediateRespawn" || gamerule != "doInsomnia" || gamerule != "doLimitedCrafting" || gamerule != "doMobLoot" || gamerule != "doMobSpawning" || gamerule != "doPatrolSpawning" || gamerule != "doTileDrops" || gamerule != "doTraderSpawning" || gamerule != "doWeatherCycle" || gamerule != "drowningDamage" || gamerule != "fallDamage" || gamerule != "fireDamage" || gamerule != "keepInventory" || gamerule != "logAdminCommands" || gamerule != "mobGriefing" || gamerule != "naturalRegeneration" || gamerule != "reducedDebugInfo" || gamerule != "sendCommandFeedback" || gamerule != "showDeathMessages" || gamerule != "spectatorsGenerateChunks")) {
+    if (!(gamerule.equals("announceAdvancements") || gamerule.equals("commandBlockOutput") || gamerule.equals("disableElytraMovementCheck") || gamerule.equals("disableRaids") || gamerule.equals("doDaylightCycle") || gamerule.equals("doEntityDrops") || gamerule.equals("doFireTick") || gamerule.equals("doImmediateRespawn") || gamerule.equals("doInsomnia") || gamerule.equals("doLimitedCrafting") || gamerule.equals("doMobLoot") || gamerule.equals("doMobSpawning") || gamerule.equals("doPatrolSpawning") || gamerule.equals("doTileDrops") || gamerule.equals("doTraderSpawning") || gamerule.equals("doWeatherCycle") || gamerule.equals("drowningDamage") || gamerule.equals("fallDamage") || gamerule.equals("fireDamage") || gamerule.equals("keepInventory") || gamerule.equals("logAdminCommands") || gamerule.equals("mobGriefing") || gamerule.equals("naturalRegeneration") || gamerule.equals("reducedDebugInfo") || gamerule.equals("sendCommandFeedback") || gamerule.equals("showDeathMessages") || gamerule.equals("spectatorsGenerateChunks"))) {
 
       System.out.println(ConsoleColours.WARN + "Invalid gamerule, defaulting to 'keepInventory'" + ConsoleColours.RESET);
       gamerule = "keepInventory";
@@ -182,8 +186,6 @@ public class Commands {
 
   // TODO: Data
 
-  // TODO: Datapack
-
   // Command: /seed
   public String seed() {
 
@@ -201,7 +203,7 @@ public class Commands {
 
     }
 
-    if (!(tagType != "add" || tagType != "list" || tagType != "remove")) {
+    if (!(tagType.equals("add") || tagType.equals("list") || tagType.equals("remove"))) {
 
       System.out.println(ConsoleColours.WARN + "Invalid argument '" + tagType + "', defaulting to 'list'" + ConsoleColours.RESET);
       tagType = "list";
@@ -231,5 +233,105 @@ public class Commands {
   }
 
   // TODO: Worldborder
+
+  // Command: /scoreboard (Objectives)
+  public String scoreboardObjectives(String arg1, String objective, String arg2, String arg3) {
+
+    if (!(arg1.equals("add") || arg1.equals("list") || arg1.equals("modify") || arg1.equals("remove") || arg1.equals("setDisplay"))) {
+
+      System.out.println(ConsoleColours.WARN + "Invalid argument '" + arg1 + "', defaulting to 'list'" + ConsoleColours.RESET);
+      arg1 = "list";
+      return "scoreboard objectives " + arg1;
+
+    }
+
+    // Add
+    if (arg1.equals("add")) {
+
+      if (!(arg2.equals("air") || arg2.equals("armor") || arg2.equals("deathCount") || arg2.equals("dummy") || arg2.equals("heath") || arg2.equals("food") || arg2.equals("killedByTeam") || arg2.equals("level") || arg2.equals("playerKillCount") || arg2.equals("teamKill") || arg2.equals("totalKillCount") || arg2.equals("trigger") || arg2.equals("xp"))) {
+
+        System.out.println(ConsoleColours.WARN + "Invalid argument(2) '" + arg2 + "', defaulting to 'dummy'" + ConsoleColours.RESET);
+        arg2 = "dummy";
+
+      }
+
+      return "scoreboard objectives " + arg1 + " " + objective + " " + arg2;
+
+    }
+
+    // List
+    if (arg1.equals("list")) {
+
+      return "scoreboard objectives " + arg1;
+
+    }
+
+    // Modify
+    if (arg1.equals("modify")) {
+
+      // Display Name
+      if (arg2.equals("displayname")) {
+
+        return "scoreboard objectives " + arg1 + " " + objective + " " + arg2 + " {\"text\": \"" + arg3 + "\"}";
+
+      }
+
+      // Render Type
+      if (arg2.equals("rendertype")) {
+
+        // Hearts
+        if (arg3.equals("hearts")) {
+
+          return "scoreboard objectives modify " + objective + " rendertype hearts";
+
+        }
+
+        // Integer
+        if (arg3.equals("integer")) {
+
+          return "scoreboard objectives modify " + objective + " rendertype integer";
+
+        }
+
+      }
+
+    }
+
+    // Remove
+    if (arg1.equals("remove")) {
+
+      return "scoreboard objectives remove " + objective;
+
+    }
+
+    // Set Display
+    if (arg1.equals("setdisplay")) {
+
+      // Below Name
+      if (arg2.equals("belowName")) {
+
+        return "scoreboard objectives setdisplay belowName " + objective;
+
+      }
+
+      // List
+      if (arg2.equals("list")) {
+
+        return "scoreboard objectives setdisplay list " + objective;
+
+      }
+
+      // Sidebar
+      if (arg2.equals("sidebar")) {
+
+        return "scoreboard objectives setdisplay sidebar " + objective;
+
+      }
+
+    }
+
+    return "scoreboard objectives " + arg1;
+
+  }
 
 }
