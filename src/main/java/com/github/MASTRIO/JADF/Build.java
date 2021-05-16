@@ -65,7 +65,7 @@ public class Build {
       System.out.println("Generated pack.mcmeta file");
 
       // Conventions
-      if (Datapack.configuration[0]) {
+      if (Datapack.doDatapackConventions) {
 
         // Create global folder
         path = Paths.get(packPath + "/data/global");
@@ -75,7 +75,7 @@ public class Build {
         // Create advancements folder
         path = Paths.get(packPath + "/data/global/advancements");
         Files.createDirectories(path);
-        System.out.println("Generated global/advanements folder");
+        System.out.println("Generated global/advancements folder");
 
         // Create root.json file
         newFile = new File(packPath + "/data/global/advancements/root.json");

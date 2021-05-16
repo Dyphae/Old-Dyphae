@@ -24,9 +24,7 @@ public class TestDatapack {
       "bob_ross",
       "version 'sus'"
     );
-    Datapack.config(
-      true
-    );
+    Datapack.doDatapackConventions();
 
     // Load and Tick
     Datapack.loadFunction = new String[] {

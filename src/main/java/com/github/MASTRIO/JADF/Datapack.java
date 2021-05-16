@@ -7,10 +7,8 @@ import java.nio.file.Paths;
 public class Datapack {
 
   // Variables
+  static Boolean doDatapackConventions;
   static Build build = new Build();
-  static Boolean[] configuration = {
-    false
-  };
   static String[] datapackData;
   public static String[] loadFunction = {
     "say LOAD"
@@ -36,11 +34,9 @@ public class Datapack {
   }
 
   // Config
-  public static void config(Boolean doDatapackConventions) {
+  public static void doDatapackConventions() {
 
-    configuration = new Boolean[] {
-      doDatapackConventions // 0
-    };
+    doDatapackConventions = true;
 
   }
 
