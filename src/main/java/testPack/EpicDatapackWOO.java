@@ -60,8 +60,8 @@ public class EpicDatapackWOO extends Datapack {
     someOtherThing.init();
 
     @McFunction(
-      name = "A VERY sus function",
-      deprecated = true
+      deprecated = true,
+      name = "A VERY sus function"
     )
     Function sussyCommand = new Function("lil_sussy_boi");
     sussyCommand.setCommands(new String[] {
