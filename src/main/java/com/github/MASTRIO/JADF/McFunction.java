@@ -6,16 +6,15 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE_USE)
 public @interface McFunction {
 
-  // * Stuff
   // Function Info
-  String name() default "Name of the Function";
+  String name() default "Function name";
 
-  String description() default "A short description of the function";
+  String description() default "Function description";
 
-  String author() default "Who made the function (useful with multiple devs)";
+  String author() default "Who made function";
 
   // Other
-  String notes() default "Information about the function for you to remember";
+  String notes() default "Information about function";
 
   boolean deprecated() default false;
 

@@ -41,12 +41,10 @@ public class EpicDatapackWOO extends Datapack {
       name = "Cool Function",
       description = "A test idfk"
     )
-    Function coolFunction = new Function("cool_function");
-    coolFunction.setCommands(new String[] {
+    Function coolFunction = new Function("cool_function").setCommands(new String[] {
       "say Wazzup gamers?",
       "say are you sus?????!!??!?!"
-    });
-    coolFunction.init();
+    }).init();
 
     @McFunction(
       author = "Not Bob Ross",
@@ -56,18 +54,15 @@ public class EpicDatapackWOO extends Datapack {
     someOtherThing.setCommands(new String[] {
       "give @a minecraft:diamond 69",
       "say u got da dimnd, poggers"
-    });
-    someOtherThing.init();
+    }).init();
 
     @McFunction(
       deprecated = true,
       name = "A VERY sus function"
     )
-    Function sussyCommand = new Function("lil_sussy_boi");
-    sussyCommand.setCommands(new String[] {
+    Function sussyCommand = new Function("lil_sussy_boi").setCommands(new String[] {
       "say ur sus!!!?!?!?!?!?!?"
-    });
-    sussyCommand.init();
+    }).init();
 
   }
 

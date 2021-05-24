@@ -20,14 +20,15 @@ public class Function {
   }
 
   // Set Commands
-  public void setCommands(String[] commands) {
+  public Function setCommands(String[] commands) {
 
     this.functionCommands = commands;
+    return this;
 
   }
 
   // Initialise function
-  public void init() {
+  public Function init() {
 
     try {
 
@@ -50,6 +51,8 @@ public class Function {
       System.err.println("Failed to build Function (" + this.functionN + ".mcfunction)");
 
     }
+
+    return this;
 
   }
 
