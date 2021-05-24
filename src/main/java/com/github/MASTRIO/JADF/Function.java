@@ -7,15 +7,22 @@ import java.io.IOException;
 public class Function {
 
   // Variables
-  public String[] setCommands = {
+  private String[] functionCommands = {
     "say TEST"
   };
   private String functionN;
 
-  // Set function name
-  public void setName(String functionNameThing) {
+  // Constructor
+  public Function(String namespace) {
 
-    this.functionN = functionNameThing;
+    this.functionN = namespace;
+
+  }
+
+  // Set Commands
+  public void setCommands(String[] commands) {
+
+    this.functionCommands = commands;
 
   }
 
@@ -28,9 +35,9 @@ public class Function {
       FileWriter fillFile = new FileWriter(Datapack.packPath + "/data/" + Datapack.datapackInfo[1] + "/functions/" + this.functionN + ".mcfunction");
 
       int fc = 0;
-      for (byte i = (byte) (this.setCommands.length - 1); i >= 0; i--) {
+      for (byte i = (byte) (this.functionCommands.length - 1); i >= 0; i--) {
 
-        fillFile.write(this.setCommands[fc] + "\n");
+        fillFile.write(this.functionCommands[fc] + "\n");
         fc++;
 
       }

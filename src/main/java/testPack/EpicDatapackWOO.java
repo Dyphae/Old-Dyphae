@@ -41,25 +41,33 @@ public class EpicDatapackWOO extends Datapack {
       name = "Cool Function",
       description = "A test idfk"
     )
-    Function coolFunction = new Function();
-    coolFunction.setName("cool_function");
-    coolFunction.setCommands = new String[] {
+    Function coolFunction = new Function("cool_function");
+    coolFunction.setCommands(new String[] {
       "say Wazzup gamers?",
       "say are you sus?????!!??!?!"
-    };
+    });
     coolFunction.init();
 
     @McFunction(
       author = "Not Bob Ross",
       notes = "bob ross didn't make this function"
     )
-    Function someOtherThing = new Function();
-    someOtherThing.setName("hello_hi_owo");
-    someOtherThing.setCommands = new String[] {
+    Function someOtherThing = new Function("hello_hi_owo");
+    someOtherThing.setCommands(new String[] {
       "give @a minecraft:diamond 69",
       "say u got da dimnd, poggers"
-    };
+    });
     someOtherThing.init();
+
+    @McFunction(
+      name = "A VERY sus function",
+      deprecated = true
+    )
+    Function sussyCommand = new Function("lil_sussy_boi");
+    sussyCommand.setCommands(new String[] {
+      "say ur sus!!!?!?!?!?!?!?"
+    });
+    sussyCommand.init();
 
   }
 
