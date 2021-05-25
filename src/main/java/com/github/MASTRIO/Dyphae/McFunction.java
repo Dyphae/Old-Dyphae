@@ -1,4 +1,4 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
@@ -8,14 +8,11 @@ public @interface McFunction {
 
   // Function Info
   String name() default "Function name";
-
   String description() default "Function description";
-
   String author() default "Who made function";
 
   // Other
   String notes() default "Information about function";
-
   boolean deprecated() default false;
 
 }

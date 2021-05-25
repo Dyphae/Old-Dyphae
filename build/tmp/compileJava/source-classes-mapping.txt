@@ -1,14 +1,18 @@
-com/github/MASTRIO/JADF/ConsoleColours.java
- com.github.MASTRIO.JADF.ConsoleColours
-com/github/MASTRIO/JADF/Datapack.java
- com.github.MASTRIO.JADF.Datapack
-com/github/MASTRIO/JADF/McFunction.java
- com.github.MASTRIO.JADF.McFunction
-com/github/MASTRIO/JADF/CommandBuilder.java
- com.github.MASTRIO.JADF.CommandBuilder
-com/github/MASTRIO/JADF/Function.java
- com.github.MASTRIO.JADF.Function
-com/github/MASTRIO/JADF/Command.java
- com.github.MASTRIO.JADF.Command
+com/github/MASTRIO/Dyphae/Commands/Command.java
+ com.github.MASTRIO.Dyphae.Commands.Command
+com/github/MASTRIO/Dyphae/McFunction.java
+ com.github.MASTRIO.Dyphae.McFunction
+com/github/MASTRIO/Dyphae/Console/ConsoleLogger.java
+ com.github.MASTRIO.Dyphae.Console.ConsoleLogger
+com/github/MASTRIO/Dyphae/Datapack.java
+ com.github.MASTRIO.Dyphae.Datapack
+com/github/MASTRIO/Dyphae/Console/ConsoleColours.java
+ com.github.MASTRIO.Dyphae.Console.ConsoleColours
+com/github/MASTRIO/Dyphae/Function.java
+ com.github.MASTRIO.Dyphae.Function
+com/github/MASTRIO/Dyphae/Commands/CommandBuilder.java
+ com.github.MASTRIO.Dyphae.Commands.CommandBuilder
+com/github/MASTRIO/Dyphae/Objects/Selectors.java
+ com.github.MASTRIO.Dyphae.Objects.Selectors
 testPack/EpicDatapackWOO.java
  testPack.EpicDatapackWOO

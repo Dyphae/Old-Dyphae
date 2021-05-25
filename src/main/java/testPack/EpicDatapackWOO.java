@@ -1,6 +1,8 @@
 package testPack;
 
-import com.github.MASTRIO.JADF.*;
+import com.github.MASTRIO.Dyphae.*;
+import com.github.MASTRIO.Dyphae.Commands.CommandBuilder;
+import com.github.MASTRIO.Dyphae.Console.ConsoleLogger;
 
 public class EpicDatapackWOO extends Datapack {
 
@@ -34,32 +36,15 @@ public class EpicDatapackWOO extends Datapack {
   }
 
   @Override
-  public void functionList() {
+  public void onBuild() {
 
     @McFunction(
       name = "Cool Function",
       description = "A test idfk"
     )
-    Function coolFunction = new Function("cool_function").setCommands(new Command[] {
+    Function coolFunction = new Function("cool_function").setCommands(new String[] {
       CommandBuilder.say("mongus?"),
       CommandBuilder.give("@r", "minecraft:wooden_hoe", "Sus:1", 4)
-    }).init();
-
-    @McFunction(
-      author = "Not Bob Ross",
-      notes = "bob ross didn't make this function"
-    )
-    Function someOtherThing = new Function("hello_hi_owo").setCommands(new Command[] {
-      CommandBuilder.say("hello owo"),
-      CommandBuilder.give("@a", "minecraft:diamond", 1)
-    }).init();
-
-    @McFunction(
-      deprecated = true,
-      name = "A VERY sus function"
-    )
-    Function sussyCommand = new Function("lil_sussy_boi").setCommands(new Command[] {
-      CommandBuilder.say("lol burning trees are fun")
     }).init();
 
   }

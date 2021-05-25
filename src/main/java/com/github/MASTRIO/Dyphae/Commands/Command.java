@@ -1,4 +1,4 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae.Commands;
 
 public class Command {
 
@@ -6,7 +6,7 @@ public class Command {
   private String commandSyntax;
 
   // Constructor
-  Command(String syntax) {
+  public Command(String syntax) {
 
     this.commandSyntax = syntax;
 

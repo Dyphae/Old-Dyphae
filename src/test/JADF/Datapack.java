@@ -1,4 +1,4 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae;
 
 import java.io.IOException;
 import java.nio.file.Files;

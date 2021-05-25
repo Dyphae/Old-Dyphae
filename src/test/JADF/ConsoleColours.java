@@ -1,4 +1,4 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae;
 
 public class ConsoleColours {
 

@@ -1,4 +1,6 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae;
+
+import com.github.MASTRIO.Dyphae.Commands.CommandBuilder;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -7,7 +9,7 @@ import java.io.IOException;
 public class Function {
 
   // Variables
-  private Command[] functionCommands = {
+  private String[] functionCommands = {
     CommandBuilder.say("TEST")
   };
   private String functionN;
@@ -20,7 +22,7 @@ public class Function {
   }
 
   // Set Commands
-  public Function setCommands(Command[] commands) {
+  public Function setCommands(String[] commands) {
 
     this.functionCommands = commands;
     return this;

@@ -1,4 +1,7 @@
-package com.github.MASTRIO.JADF;
+package com.github.MASTRIO.Dyphae;
+
+import com.github.MASTRIO.Dyphae.Commands.CommandBuilder;
+import com.github.MASTRIO.Dyphae.Console.ConsoleLogger;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -24,10 +27,10 @@ public class Datapack {
 
   // Default Functions
   public static String[] load = {
-    "say LOAD"
+    CommandBuilder.say("LOAD")
   };
   public static String[] tick = {
-    "say TICK"
+    CommandBuilder.say("TICK")
   };
 
   // Initiate datapack
@@ -56,7 +59,7 @@ public class Datapack {
     System.out.println(" \\|________|\\|__|\\|__|\\|_______|\\|__| ");
 
     // Is Building
-    System.out.println("\nBuilding '" + Datapack.datapackInfo[0] + "' datapack version '" + Datapack.datapackInfo[3] + "', made by '" + Datapack.datapackInfo[2] + "'");
+    ConsoleLogger.info("\nBuilding '" + Datapack.datapackInfo[0] + "' datapack version '" + Datapack.datapackInfo[3] + "', made by '" + Datapack.datapackInfo[2] + "'");
 
     // Create Output folder
     try {
@@ -248,12 +251,12 @@ public class Datapack {
       System.out.println("Generated load.mcfunction file");
 
       // Compile Functions, etc.
-      functionList();
+      onBuild();
 
       // Complete Build
       System.out.println(compileBar);
-      System.out.println("Datapack Build Completed");
-      System.out.println("The built datapack is located at: " + currentDir + "/" + Datapack.datapackInfo[0] + "/");
+      ConsoleLogger.success("Datapack Build Completed");
+      ConsoleLogger.info("The built datapack is located at: " + currentDir + "/" + Datapack.datapackInfo[0] + "/");
 
     } catch (IOException e) {
 
@@ -265,9 +268,10 @@ public class Datapack {
   }
 
   // Function List
-  public void functionList() {
+  public void onBuild() {
 
-    System.out.println("Functions go here");
+    ConsoleLogger.info("This method runs when the datapack is being built");
+    ConsoleLogger.info("You put your mcfunction declarations here");
 
   }
 
