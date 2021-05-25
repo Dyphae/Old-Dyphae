@@ -1,8 +1,6 @@
 package testPack;
 
-import com.github.MASTRIO.JADF.Datapack;
-import com.github.MASTRIO.JADF.Function;
-import com.github.MASTRIO.JADF.McFunction;
+import com.github.MASTRIO.JADF.*;
 
 public class EpicDatapackWOO extends Datapack {
 
@@ -30,6 +28,7 @@ public class EpicDatapackWOO extends Datapack {
       "say IUGAEKfhvbhj"
     };
 
+    // Build the datapack
     epicDatapack.build();
 
   }
@@ -41,27 +40,26 @@ public class EpicDatapackWOO extends Datapack {
       name = "Cool Function",
       description = "A test idfk"
     )
-    Function coolFunction = new Function("cool_function").setCommands(new String[] {
-      "say Wazzup gamers?",
-      "say are you sus?????!!??!?!"
+    Function coolFunction = new Function("cool_function").setCommands(new Command[] {
+      CommandBuilder.say("mongus?"),
+      CommandBuilder.give("@r", "minecraft:wooden_hoe", "Sus:1", 4)
     }).init();
 
     @McFunction(
       author = "Not Bob Ross",
       notes = "bob ross didn't make this function"
     )
-    Function someOtherThing = new Function("hello_hi_owo");
-    someOtherThing.setCommands(new String[] {
-      "give @a minecraft:diamond 69",
-      "say u got da dimnd, poggers"
+    Function someOtherThing = new Function("hello_hi_owo").setCommands(new Command[] {
+      CommandBuilder.say("hello owo"),
+      CommandBuilder.give("@a", "minecraft:diamond", 1)
     }).init();
 
     @McFunction(
       deprecated = true,
       name = "A VERY sus function"
     )
-    Function sussyCommand = new Function("lil_sussy_boi").setCommands(new String[] {
-      "say ur sus!!!?!?!?!?!?!?"
+    Function sussyCommand = new Function("lil_sussy_boi").setCommands(new Command[] {
+      CommandBuilder.say("lol burning trees are fun")
     }).init();
 
   }

@@ -7,8 +7,8 @@ import java.io.IOException;
 public class Function {
 
   // Variables
-  private String[] functionCommands = {
-    "say TEST"
+  private Command[] functionCommands = {
+    CommandBuilder.say("TEST")
   };
   private String functionN;
 
@@ -20,7 +20,7 @@ public class Function {
   }
 
   // Set Commands
-  public Function setCommands(String[] commands) {
+  public Function setCommands(Command[] commands) {
 
     this.functionCommands = commands;
     return this;
