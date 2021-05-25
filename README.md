@@ -1,5 +1,2 @@
-# JADF
-Just Another Datapack Framework
-
-
-yes
+# Dyphae
+I took Hyphae and added a D, for datapack, get it?
