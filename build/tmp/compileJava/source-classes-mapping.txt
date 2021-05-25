@@ -2,9 +2,13 @@ com/github/MASTRIO/JADF/ConsoleColours.java
  com.github.MASTRIO.JADF.ConsoleColours
 com/github/MASTRIO/JADF/Datapack.java
  com.github.MASTRIO.JADF.Datapack
-com/github/MASTRIO/JADF/Function.java
- com.github.MASTRIO.JADF.Function
 com/github/MASTRIO/JADF/McFunction.java
  com.github.MASTRIO.JADF.McFunction
+com/github/MASTRIO/JADF/CommandBuilder.java
+ com.github.MASTRIO.JADF.CommandBuilder
+com/github/MASTRIO/JADF/Function.java
+ com.github.MASTRIO.JADF.Function
+com/github/MASTRIO/JADF/Command.java
+ com.github.MASTRIO.JADF.Command
 testPack/EpicDatapackWOO.java
  testPack.EpicDatapackWOO
