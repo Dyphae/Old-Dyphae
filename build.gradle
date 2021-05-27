@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'com.github.MASTRIO.Dyphae'
 version '0.1.0'
 
 repositories {
@@ -22,7 +22,7 @@ jar {
   manifest {
     attributes(
       'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-      'Main-Class': 'com.github.MASTRIO.JADF.Main'
+      'Main-Class': 'com.github.MASTRIO.Dyphae.Main'
     )
   }
 }

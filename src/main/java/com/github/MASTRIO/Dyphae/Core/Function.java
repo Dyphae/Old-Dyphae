@@ -1,6 +1,6 @@
-package com.github.MASTRIO.Dyphae;
+package com.github.MASTRIO.Dyphae.Core;
 
-import com.github.MASTRIO.Dyphae.Commands.CommandBuilder;
+import com.github.MASTRIO.Dyphae.Command;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -10,7 +10,7 @@ public class Function {
 
   // Variables
   private String[] functionCommands = {
-    CommandBuilder.say("TEST")
+    Command.say("TEST")
   };
   private String functionN;
 
@@ -46,11 +46,11 @@ public class Function {
       }
 
       fillFile.close();
-      System.out.println("Generated " + this.functionN + ".mcfunction file");
+      ConsoleLogger.log("Generated " + this.functionN + ".mcfunction file");
 
     } catch (IOException e) {
 
-      System.err.println("Failed to build Function (" + this.functionN + ".mcfunction)");
+      ConsoleLogger.error("Failed to build Function (" + this.functionN + ".mcfunction)");
 
     }
 

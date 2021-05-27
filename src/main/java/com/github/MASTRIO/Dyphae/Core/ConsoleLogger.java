@@ -1,4 +1,6 @@
-package com.github.MASTRIO.Dyphae.Console;
+package com.github.MASTRIO.Dyphae.Core;
+
+import com.github.MASTRIO.Dyphae.Core.ConsoleColours;
 
 public class ConsoleLogger {
 
