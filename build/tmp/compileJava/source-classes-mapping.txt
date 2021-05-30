@@ -4,11 +4,11 @@ com/github/MASTRIO/Dyphae/Core/Selectors.java
  com.github.MASTRIO.Dyphae.Core.Selectors
 com/github/MASTRIO/Dyphae/Core/ConsoleColours.java
  com.github.MASTRIO.Dyphae.Core.ConsoleColours
+com/github/MASTRIO/Dyphae/Core/ConsoleLogger.java
+ com.github.MASTRIO.Dyphae.Core.ConsoleLogger
 com/github/MASTRIO/Dyphae/Core/Function.java
  com.github.MASTRIO.Dyphae.Core.Function
 com/github/MASTRIO/Dyphae/Command.java
  com.github.MASTRIO.Dyphae.Command
-com/github/MASTRIO/Dyphae/Core/ConsoleLogger.java
- com.github.MASTRIO.Dyphae.Core.ConsoleLogger
 com/github/MASTRIO/Dyphae/Core/Datapack.java
  com.github.MASTRIO.Dyphae.Core.Datapack

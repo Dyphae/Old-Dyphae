@@ -49,7 +49,8 @@ public class EpicDatapackWOO extends Datapack {
 
     @MCFunction(deprecated = true)
       Function helloIAmFunction = new Function("hejjo").setCommands(new String[] {
-        Command.say("goodbye")
+        Command.say("goodbye"),
+        Command.function("this", "cool_function")
     }).init();
 
   }

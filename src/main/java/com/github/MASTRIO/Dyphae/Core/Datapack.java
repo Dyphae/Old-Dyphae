@@ -13,6 +13,7 @@ public class Datapack {
 
   // Variables
   static String[] datapackInfo;
+  public static String datapackName;
   static String compileBar = "~----------------------------------------------------------------------------------------~";
   static String currentDir = System.getProperty("user.dir");
   public static String[] functionCommands = {
@@ -42,6 +43,8 @@ public class Datapack {
       author,
       version
     };
+
+    datapackName = datapackInfo[1];
 
   }
 

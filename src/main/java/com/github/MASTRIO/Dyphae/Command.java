@@ -1,10 +1,23 @@
 package com.github.MASTRIO.Dyphae;
 
+import com.github.MASTRIO.Dyphae.Core.Datapack;
+
 public class Command {
 
-  // Variables
-
   // * Commands
+  // Command: Function
+  public static String function(String namespace, String function) {
+
+    if (namespace == "this") {
+
+      namespace = Datapack.datapackName;
+
+    }
+
+    return "function " + namespace + ":" + function;
+
+  }
+
   // Command: Say
   public static String say(String message) {
 
