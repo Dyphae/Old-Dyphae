@@ -1,14 +1,18 @@
 com/github/MASTRIO/Dyphae/Core/MCFunction.java
  com.github.MASTRIO.Dyphae.Core.MCFunction
-com/github/MASTRIO/Dyphae/Core/Selectors.java
- com.github.MASTRIO.Dyphae.Core.Selectors
+com/github/MASTRIO/Dyphae/Core/Datapack.java
+ com.github.MASTRIO.Dyphae.Core.Datapack
 com/github/MASTRIO/Dyphae/Core/ConsoleColours.java
  com.github.MASTRIO.Dyphae.Core.ConsoleColours
 com/github/MASTRIO/Dyphae/Core/ConsoleLogger.java
  com.github.MASTRIO.Dyphae.Core.ConsoleLogger
 com/github/MASTRIO/Dyphae/Core/Function.java
  com.github.MASTRIO.Dyphae.Core.Function
+com/github/MASTRIO/Dyphae/Core/Warper.java
+ com.github.MASTRIO.Dyphae.Core.Warper
+com/github/MASTRIO/Dyphae/Core/Selector.java
+ com.github.MASTRIO.Dyphae.Core.Selector
+com/github/MASTRIO/Dyphae/Core/SelectorBuilder.java
+ com.github.MASTRIO.Dyphae.Core.SelectorBuilder
 com/github/MASTRIO/Dyphae/Command.java
  com.github.MASTRIO.Dyphae.Command
-com/github/MASTRIO/Dyphae/Core/Datapack.java
- com.github.MASTRIO.Dyphae.Core.Datapack

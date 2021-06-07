@@ -1,6 +1,7 @@
 package com.github.MASTRIO.Dyphae;
 
 import com.github.MASTRIO.Dyphae.Core.Datapack;
+import com.github.MASTRIO.Dyphae.Builders.Selector;
 
 public class Command {
 
@@ -26,14 +27,14 @@ public class Command {
   }
 
   // Command: Give
-  public static String give(String selector, String item, int amount) {
+  public static String give(Selector selector, String item, int amount) {
 
-    return "give " + selector + " " + item + " " + amount;
+    return "give " + selector.get() + " " + item + " " + amount;
 
   }
-  public static String give(String selector, String item, String nbt, int amount) {
+  public static String give(Selector selector, String item, String nbt, int amount) {
 
-    return "give " + selector + " " + item + "{" + nbt + "} " + amount;
+    return "give " + selector.get() + " " + item + "{" + nbt + "} " + amount;
 
   }
 

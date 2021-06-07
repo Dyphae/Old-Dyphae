@@ -34,8 +34,8 @@ public class Function {
 
     try {
 
-      File newFile = new File(Datapack.packPath + "/data/" + Datapack.datapackInfo[1] + "/functions/" + this.functionN + ".mcfunction");
-      FileWriter fillFile = new FileWriter(Datapack.packPath + "/data/" + Datapack.datapackInfo[1] + "/functions/" + this.functionN + ".mcfunction");
+      File newFile = new File(Warper.packPath + "/data/" + Datapack.datapackInfo[1] + "/functions/" + this.functionN + ".mcfunction");
+      FileWriter fillFile = new FileWriter(Warper.packPath + "/data/" + Datapack.datapackInfo[1] + "/functions/" + this.functionN + ".mcfunction");
 
       int fc = 0;
       for (byte i = (byte) (this.functionCommands.length - 1); i >= 0; i--) {

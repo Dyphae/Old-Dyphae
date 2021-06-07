@@ -1,9 +1,8 @@
 package testPack;
 
+import com.github.MASTRIO.Dyphae.Builders.Selector;
 import com.github.MASTRIO.Dyphae.Command;
-import com.github.MASTRIO.Dyphae.Core.Datapack;
-import com.github.MASTRIO.Dyphae.Core.Function;
-import com.github.MASTRIO.Dyphae.Core.MCFunction;
+import com.github.MASTRIO.Dyphae.Core.*;
 
 public class EpicDatapackWOO extends Datapack {
 
@@ -14,7 +13,7 @@ public class EpicDatapackWOO extends Datapack {
   public static void main(String[] args) {
 
     // Init Datapack
-    init(
+    _init(
       "Epic Datapack",
       "epic",
       "A very epic datapack",
@@ -23,20 +22,32 @@ public class EpicDatapackWOO extends Datapack {
     );
 
     // Set default functions
-    load = new String[] {
+    _load = new String[] {
       Command.say("Hello I am loading")
     };
-    tick = new String[] {
+    _tick = new String[] {
       Command.say("tick tock")
     };
 
     // Build the datapack
-    epicDatapack.build();
+    _openCompiler(epicDatapack);
 
   }
 
   @Override
-  public void onBuild() {
+  public void _onBuild() {
+
+    @com.github.MASTRIO.Dyphae.Core.Selector(
+      name = "Amongus imposter",
+      deprecated = true
+    )
+    Selector imposter = new Selector("@e").setArgs(new String[] {
+      "type=minecraft:zombie",
+      "distance=5.."
+    });
+
+    @com.github.MASTRIO.Dyphae.Core.Selector(name = "Me obviously")
+    Selector me = new Selector("MASTRIO");
 
     @MCFunction(
       name = "Cool Function",
@@ -44,7 +55,8 @@ public class EpicDatapackWOO extends Datapack {
     )
       Function coolFunction = new Function("cool_function").setCommands(new String[] {
       Command.say("sus"),
-      Command.give("@r", "minecraft:wooden_hoe", "Sus:1", 4),
+      Command.give(imposter, "minecraft:wooden_hoe", "CustomModelData:69", 4),
+      Command.give(me, "minecraft:diamond", 23)
     }).init();
 
     @MCFunction(deprecated = true)

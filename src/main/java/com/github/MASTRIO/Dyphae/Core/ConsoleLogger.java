@@ -1,7 +1,5 @@
 package com.github.MASTRIO.Dyphae.Core;
 
-import com.github.MASTRIO.Dyphae.Core.ConsoleColours;
-
 public class ConsoleLogger {
 
   // Log
@@ -36,6 +34,13 @@ public class ConsoleLogger {
   public static void success(String message) {
 
     System.out.println(ConsoleColours.SUCCESS + "[Dyphae@Success]: " + message + ConsoleColours.RESET);
+
+  }
+
+  // Execute Task
+  static void task(String message) {
+
+    System.out.println(ConsoleColours.TASK + "[Dyphae@{Warper#Task}]: " + message + ConsoleColours.RESET);
 
   }
 
