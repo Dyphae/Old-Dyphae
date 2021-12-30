@@ -1,6 +1,9 @@
 # Dyphae
 *I took Hyphae and added a D, for datapack, get it?*
 
+## Hey
+I am considering converting Dyphae into a framework that used Rust instead of Java because Rust is cool
+
 *(Note to self: Make this image look good, also get a better motto)*
 <p style="text-align:center;"><image src="https://github.com/Dyphae/Dyphae/blob/master/Images/DyLogo.png"></image></p>
 
